@@ -6,6 +6,7 @@ export const theme = {
       text: '#1A202C',
       textSecondary: '#4A5568',
       white: '#FFFFFF',
+      gray: '#9e9e9e',
     },
     fonts: {
       primary: 'Helvetica Neue',
