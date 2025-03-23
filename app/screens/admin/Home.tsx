@@ -1,9 +1,10 @@
-import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 import StatCard from '@/components/StatCard';
 import ListItem from '@/components/ListItem';
 import { theme } from '@/theme';
+import GraphiqueTab from '@/components/GraphiqueTab';
+import CarteTab from '@/components/CarteTab';
 
 const { width } = Dimensions.get('window');
 
@@ -133,6 +134,14 @@ export default function AdminDashboard() {
                     }}
                     style={styles.chart}
                 />
+            </View>
+
+            <View>
+                <GraphiqueTab />
+            </View>
+
+            <View>
+                <CarteTab />
             </View>
 
             <View style={styles.section}>

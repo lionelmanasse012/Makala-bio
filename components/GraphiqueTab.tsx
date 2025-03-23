@@ -48,7 +48,7 @@ const GraphiqueTab = () => {
         }}
         accessor="population"
         backgroundColor="transparent"
-        paddingLeft="15"
+        paddingLeft="-2"
         absolute
       />
     </View>
