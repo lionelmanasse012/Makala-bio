@@ -1,13 +1,10 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { LogIn, UserPlus, Recycle } from 'lucide-react-native';
-import {
-  createStaticNavigation,
-  useNavigation,
-} from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@/navigation-types';
+import { RootStackParamList } from '@/navigation-types'
+
 
 // Styles
 const styles = StyleSheet.create({
@@ -92,8 +89,9 @@ const styles = StyleSheet.create({
 });
 
 export default function Index() {
-  const navigation = useNavigation();
-  // const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -116,14 +114,14 @@ export default function Index() {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.buttonSecondary}
-          onPress={() => navigation.navigate('HouseholdHome')}
+          onPress={() => navigation.navigate('Login')}
         >
           <LogIn size={20} color={styles.iconSecondary.color} />
           <Text style={styles.buttonTextSecondary}>Connexion</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonPrimary}
-          onPress={() => navigation.navigate('AdminHome')}
+          onPress={() => navigation.navigate('HouseholdHome')}
         >
           <UserPlus size={20} color={styles.icon.color} />
           <Text style={styles.buttonText}>Inscription</Text>

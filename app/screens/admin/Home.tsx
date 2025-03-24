@@ -5,6 +5,7 @@ import ListItem from '@/components/ListItem';
 import { theme } from '@/theme';
 import GraphiqueTab from '@/components/GraphiqueTab';
 import CarteTab from '@/components/CarteTab';
+import { Download, Plus } from 'lucide-react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -24,10 +25,48 @@ const styles = StyleSheet.create({
         fontFamily: theme.fonts.primary,
     },
     subtitle: {
-        fontSize: 18,
+        fontSize: 24,
         color: theme.colors.textSecondary,
         marginTop: 8,
         fontFamily: theme.fonts.primary,
+        fontWeight: 500
+    },
+    buttonContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 8,
+        marginVertical: 10,
+    },
+    button: {
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 6,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderRadius: 5,
+        padding: 10,
+        paddingHorizontal: 15,
+        borderColor: '#E6E6E9',
+    },
+    buttonGreen: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 6,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderRadius: 5,
+        padding: 10,
+        paddingHorizontal: 15,
+        borderColor: '#16A349',
+        backgroundColor: '#16A349',
+    },
+    textButtonGreen: {
+        color: 'white',
     },
     statsContainer: {
         flexDirection: 'row',
@@ -101,8 +140,20 @@ export default function AdminDashboard() {
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.title}>E-Butshafu</Text>
                 <Text style={styles.subtitle}>Tableau de bord</Text>
+
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.button}>
+                        <Download color="black" size={18} />
+                        <Text>Exporter</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonGreen
+                    }>
+                        <Plus color="white" size={18} />
+                        <Text style={styles.
+                            textButtonGreen}>Ajouter</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
             <View style={styles.statsContainer}>
