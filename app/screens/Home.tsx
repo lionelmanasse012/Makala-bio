@@ -121,7 +121,7 @@ export default function Index() {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonPrimary}
-          onPress={() => navigation.navigate('HouseholdHome')}
+          onPress={() => navigation.navigate('CollectorHome')}
         >
           <UserPlus size={20} color={styles.icon.color} />
           <Text style={styles.buttonText}>Inscription</Text>

@@ -8,6 +8,7 @@ import Register from '@/app/screens/auth/Register';
 import HouseholdHome from '@/app/screens/household/Home';
 import HouseholdRequest from '@/app/screens/household/Tabs/Request';
 import AdminHome from '@/app/screens/admin/Home';
+import CollectorHome from '@/app/screens/collectors/Home';
 import Navbar from './components/Navbar';
 import Users from './app/screens/admin/Tabs/Users';
 import Notifications from './app/screens/admin/Tabs/Notifications';
@@ -77,6 +78,34 @@ const TabNavigatorAdmin = () => {
   )
 }
 
+const TabNavigatorACollector = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: '#16A349',
+        tabBarInactiveTintColor: 'gray',
+        header: () => <Navbar />,
+      }}
+    >
+      <Tab.Screen
+        name="Tableau"
+        component={CollectorHome}
+        options={{ tabBarIcon: ({ color }) => <ChartBar color={color} /> }}
+      />
+      <Tab.Screen
+        name="Utilisateurs"
+        component={Users}
+        options={{ tabBarIcon: ({ color }) => <User color={color} /> }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{ tabBarIcon: ({ color }) => <Bell color={color} /> }}
+      />
+    </Tab.Navigator>
+  )
+}
+
 export default function App() {
   return (
     <Stack.Navigator initialRouteName="Home" screenOptions={{
@@ -88,6 +117,7 @@ export default function App() {
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="HouseholdHome" component={TabNavigatorHouseHold} />
       <Stack.Screen name="AdminHome" component={TabNavigatorAdmin} />
+      <Stack.Screen name="CollectorHome" component={TabNavigatorACollector} />
     </Stack.Navigator>
   );
 }

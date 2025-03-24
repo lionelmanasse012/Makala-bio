@@ -4,4 +4,5 @@ export type RootStackParamList = {
     Register: undefined;
     HouseholdHome: undefined;
     AdminHome: undefined;
+    CollectorHome: undefined;
 };

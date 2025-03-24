@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
-import { Award, Leaf, Recycle, BarChart3, Calendar, Check, Clock, Plus } from "lucide-react-native";
+import { Award, Leaf, Recycle, BarChart3, Calendar, Plus } from "lucide-react-native";
 
-export default function EcoPointsScreen() {
+export default function Home() {
     return (
         <ScrollView style={styles.scrollContainer}>
             <View style={styles.container}>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     newRequestText: {
         color: "white",
         fontSize: 16,
-        fontWeight: "bold",
+        fontWeight: 400,
     },
     card: {
         backgroundColor: "white",
